@@ -1,0 +1,22 @@
+#Ansible install on Ubuntu 22
+sudo apt update
+sudo apt upgrade
+sudo apt install ansible
+apt install tree
+apt-get install -y python3-paramiko
+################Ansible Tree###################
+.
+├── ansible.cfg
+├── hosts
+├── inventory
+│   ├── group_vars
+│   │   └── switches
+│   │       ├── switches.yml
+│   │       ├── switches_template.yml
+│   │       └── vault
+│   ├── host_file
+│   └── host_file_template
+└── playbooks
+    ├── cisco_switch_netcheck.yml
+    └── show_version.yml
+################Ansible Tree###################
