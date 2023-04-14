@@ -1,0 +1,23 @@
+---
+
+- name: Cisco show version example
+  hosts: switches
+  gather_facts: false
+
+  tasks:
+    - name: run show version on the core switches
+      ios_command:
+        commands: 
+        - show version | incl Version
+        - show inventory
+        - show ip route
+        - show ip int brief | exc unassigned
+        - show int status
+        - show vlan
+        - show ntp ass
+        - show cdp neighbor detail
+      register: output
+
+    - name: print output
+      debug:
+        var: output.stdout_lines
